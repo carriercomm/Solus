@@ -2,7 +2,7 @@ import asynchat,asyncore,socket,sys,os,time
 try:
 	import config
 except ImportError:
-	print("Please edit config.py.dist - rename it to config.py when you're done")
+	print("Please edit config.py.dist - rename it to config.py when you're done.")
 	exit()
 class asynchat_bot(asynchat.async_chat):
 	def __init__(self, host, port):
