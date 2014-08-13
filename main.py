@@ -1,19 +1,19 @@
 #~  This code is licensed under the AGPL v3 license.
 #~  ALL MODIFICATIONS/MODULES TO THIS PROJECT MUST BE OPEN SOURCE.
-    #~ Copyright (C) 2011  Jason Gates (bikcmp) and contributors.
+#~ Copyright (C) 2011  Jason H. and contributors.
 #~ 
-    #~ This program is free software: you can redistribute it and/or modify
-    #~ it under the terms of the GNU Affero General Public License as
-    #~ published by the Free Software Foundation, either version 3 of the
-    #~ License, or (at your option) any later version.
+#~ This program is free software: you can redistribute it and/or modify
+#~ it under the terms of the GNU Affero General Public License as
+#~ published by the Free Software Foundation, either version 3 of the
+#~ License, or (at your option) any later version.
 #~ 
-    #~ This program is distributed in the hope that it will be useful,
-    #~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-    #~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    #~ GNU Affero General Public License for more details.
+#~ This program is distributed in the hope that it will be useful,
+#~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+#~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#~ GNU Affero General Public License for more details.
 #~ 
-    #~ You should have received a copy of the GNU Affero General Public License
-    #~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#~ You should have received a copy of the GNU Affero General Public License
+#~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import asynchat,asyncore,socket,sys,os,time
 try:
@@ -160,7 +160,7 @@ class asynchat_bot(asynchat.async_chat):
 	def getPrivmsg(self,user,target,message):
 		#WARNING: d-exec is ONLY FOR DEBUGGING AND CHECKING VARIABLES FOR DEVELOPMENT PURPOSES.  *DO NOT* use this in production.
 		if user['host'] not in self.ignored:
-			if "d-exec" in message and "FOSSnet/staff/" in user['host']:
+			if "d-exec" in message and "staff/" in user['host']:
 				try:
 					query = message.split('d-exec ')[1]
 					self.log("info",str(eval(query)))
